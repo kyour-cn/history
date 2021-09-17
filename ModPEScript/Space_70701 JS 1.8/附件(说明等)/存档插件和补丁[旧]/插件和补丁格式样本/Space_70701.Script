@@ -1,0 +1,53 @@
+//这个就是插件
+{//以大括号开始和结尾,因是json类型
+NEW: function(){
+print('插件载入成功');
+}
+,leave: function(){//钩子,退出存档
+}
+,mod: function(){//钩子,贞事件
+//这里输入程序
+}
+,death: function(a,b){//钩子,生物死亡
+//这里输入程序
+print(a+'杀死了'+b)
+}
+,des:function(x,y,z,e){//钩子,方块被破坏
+}
+,use: function(x,y,z,a,b,c,d){//钩子,点击方块
+//这里输入程序
+print('你用'+a+'点击了x:'+x+'y'+y+'z'+z+'位置的方块')
+}
+,att: function(a,b){//钩子,攻击实体
+//这里输入程序
+print(a+'攻击了'+b)
+}
+,cmd: function(cmd){//钩子,获取指令
+//这里输入程序
+}
+,err: function(){//自定义函数,函数名err
+//这里输入程序
+}
+,str1:"这是一个字符串"
+,uuu:123//常数
+,uui:true//布尔值
+}
+END
+注意上面这行为END(结束),它下面的所有文本将不会被导入程序。
+这个程序作为样本,无实际意义。
+［钩子函数］
+程序入口 SP.NEW()
+进入存档 SP.NEW()=newLevel
+生物死亡 SP.death(a,b)=deathHook
+攻击实体 SP.att(a,b)=attackHook
+点击方块 SP.use(x,y,z,a,v,td,bd)=useItem
+获取指令 cmd(cmd)=procCmd
+等
+作者,百度贴吧:小小草_小小爱
+QQ  2653907035
+
+光夜工作室-Space工作组
+QQ群: 155306117
+百度群: 153110164
+『js基础学习』
+百度群: 174369315

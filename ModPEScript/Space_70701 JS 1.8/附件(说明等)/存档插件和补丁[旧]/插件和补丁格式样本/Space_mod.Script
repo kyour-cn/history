@@ -1,0 +1,12 @@
+//这个就是补丁了最下面有介绍
+//下面的程序就是添加一些物品到创造背包
+Player.addItemCreativeInv(393,1,0);
+Player.addItemCreativeInv(400,1,0);
+Player.addItemCreativeInv(406,1,0);
+Player.addItemCreativeInv(459,1,0);
+Player.addItemCreativeInv(405,1,0);
+Player.addItemCreativeInv(457,1,0)
+END
+补丁和插件差不多,只不过补丁不能进行操作,因为只有在进去存档时执行一次
+用于添加物品到创造,添加方块及物品等,
+相对插件,这个不需要json格式,直接写程序就可以了,每句末尾必须加;

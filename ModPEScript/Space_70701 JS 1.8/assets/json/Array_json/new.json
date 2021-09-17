@@ -1,0 +1,16 @@
+{hsd: function(){Block.defineBlock (123, "红石灯",[["redstone_lamp_off",0],["redstone_lamp_off",0],["redstone_lamp_off",0],["redstone_lamp_off",0],["redstone_lamp_off",0],["redstone_lamp_off",0]],3,false,0);Block.setDestroyTime(123,0.7);Block.defineBlock (124, "红石灯ON",[["redstone_lamp_on",0], ["redstone_lamp_on",0], ["redstone_lamp_on",0], ["redstone_lamp_on",0], ["redstone_lamp_on",0], ["redstone_lamp_on",0]],79,false,0);Block.setDestroyTime(124,0.7)},hsk: function(){Block.defineBlock(152,'红石块',[["redstone_block",0],["redstone_block",0],["redstone_block",0],["redstone_block",0],["redstone_block",0],["redstone_block",0]],3,false,0); Player.addItemCreativeInv(152,1,0)},cpj:function(){Block.defineBlock(113,"唱片机_70701",[["jukebox_side",0],["jukebox_top",0],["jukebox_side",0],["jukebox_side",0],["jukebox_side",0],["jukebox_side",0]],3,0);Block.setDestroyTime(113,0.7);
+Block.defineBlock(70,"压力板",[["redstone_ore",0]],50,false,0);
+Block.setDestroyTime(70,0.1);
+Block.setShape(70,1/16,0,1/16,15/16,1/16,15/16);
+Block.setShape(70,0,0,0,1,1/16,1); Block.defineBlock (178, "红石线",[["iron_block",0],["iron_block",0],["redstone_ore",0],["redstone_ore",0],["redstone_ore",0],["redstone_ore",0]],3,true,0);Block.setDestroyTime(178,0.2); Block.defineBlock (179, "红石 _ 生成水",[["still_water",0],["still_water",0],["redstone_ore",0],["redstone_ore",0],["redstone_ore",0],["redstone_ore",0]],3,true,0);Block.defineBlock (75, "红石 _ 生成火",[["redstone_block",0],["redstone_block",0],["redstone_ore",0],["redstone_ore",0],["redstone_ore",0],["redstone_ore",0]],3,true,0) ;Block.setDestroyTime(75,0.2)},items:function(){ModPE.setItem(369, "blaze_rod", 0, "烈焰棒"); Player.addItemCreativeInv(369,1,0); Player.addItemCreativeInv(75,1,0); Player.addItemCreativeInv(123,1,0);Player.addItemCreativeInv(113,1,0);Player.addItemCreativeInv(330,1,0);Player.addItemCreativeInv(70,1,0); Player.addItemCreativeInv(178,1,0); Player.addItemCreativeInv(179,1,0) },hc:function(){Item.addCraftRecipe(152,1,0,[331,9,0]);Item.addCraftRecipe(331,9,0,[152,1,0]);Item.addCraftRecipe(155,1,0,[331,4,0]);Item.addCraftRecipe(113,1,0,[331,2,0]); Item.addCraftRecipe(123,1,0,[14,1,0,263,1,0]);Item.addCraftRecipe(123,1,0,[331,2,0,5,3,0]); Item.addCraftRecipe(331,5,0,[265,1,0]); Item.addCraftRecipe(70,1,0,[331,2,0]);Item.addCraftRecipe(330,1,0,[265,6,0]);Item.addCraftRecipe(178,5,0,[331,4,0]);Item.addCraftRecipe(331,10,0,[3,3,0,4,3,0]);Item.addCraftRecipe(369,1,0,[265,1,0,259,1,0]);Item.addCraftRecipe(108,1,0,[331,3,0])},all:function(){$_v.hsd();$_v.hsk();$_v.cpj();$_v.items();$_v.hc()}};
+END
+new:all
+hsd  hsk cpj
+Player.addItemCreativeInv(113,1,0)
+
+quartz_block 石英
+iron_block 铁
+coal_ore 煤块
+redstone_block红石块
+redstone_ore 红石矿
+still_water 静止水

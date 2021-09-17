@@ -1,0 +1,33 @@
+{//Space_70701
+newgame: function(){}
+,Space:function(k){//外部指令
+switch(k){
+case 0:isok();break;case 1:runin();break;case 2:getwj();break;case 3:fxkj();break;case 4:setzb();break;case 5:fxcc1();break;case 6:fx_bs();break;case 7:fxtm();break;case 8:fxssd();break;case 9:fxtmi();break;case 10:xssc();break;case 11:fxmusic();break;case 12:runjz();break;case 13:set_game();break;case 14:fxgggk();break;case 15:idid();break;case 16:ghh();break;case 17:fxtsi();break;case 18:fxhhc();break;case 19:wwwccc();break;case 20:fxwc();break;
+}}
+,radd:function(r1,r2,a1,a2){
+//兑换物品,数量,获得,数量
+var a=false;for(var i=0;i<27;i++){var y=Player.getInventorySlotCount(i);if(Player.getInventorySlot(i)==id&&y>=r2){Player.clearInventorySlot(i);Player.addItemInventory(r1,y-r2);Player.addItemInventory(a1,a2);a=true;print2("兑换成功！");break;}};if(a==false){print2("你的物品不足")}}
+,wjz:function(f,t){
+new java.io.FileOutputStream(f+'_'+FX.b(null,2)+'.js').write(new java.lang.String(t).getBytes())
+}
+};
+END
+
+
+DJZ=jk.split(';');
+var x,y,z;
+if(xl==null){x=FX.g.x();y=FX.g.y()-2;z=FX.g.z()}else{x=xl;y=yl;z=zl}
+var Time=70;
+var file_run=new java.lang.Thread(
+new java.lang.Runnable({
+run: function(){
+while(JZZ){try{
+eval(DJZ[JZin]);print2('建筑生成中')
+}catch(e){print(e)}
+JZin++;file_run.sleep(Time)
+}}}));file_run.start()
+}else{print('建筑文件不存在')}
+}
+};
+END
+

@@ -1,0 +1,6 @@
+{tmfk://HS
+[0,6,8,9,10,11,18,20,23,26,30,31,33,34,37,38,39,40,42,44,50,51,53,54,55,59,60,63,64,65,67,68,69,70,71,72,75,76,77,78,79,81,83,85,93,94,95,96,98,102,105,107,108,109,114,123,124,128,143,152,155,156,171,246,255],
+getDtgy:function(dtgyid){
+if(dtgyid==1||dtgyid==2||dtgyid==3||dtgyid==4||dtgyid==5||dtgyid==7||dtgyid==12||dtgyid==13||dtgyid==14||dtgyid==15||dtgyid==16||dtgyid==17||dtgyid==20||dtgyid==21||dtgyid==22||dtgyid==24||dtgyid==35||dtgyid==41||dtgyid==42||dtgyid==43||dtgyid==45||dtgyid==47||dtgyid==48||dtgyid==49||dtgyid==56||dtgyid==57||dtgyid==58||dtgyid==60||dtgyid==61||dtgyid==62||dtgyid==73||dtgyid==74||dtgyid==80||dtgyid==82||dtgyid==87||dtgyid==95||dtgyid==98||dtgyid==112||dtgyid==155||dtgyid==245||dtgyid==246||dtgyid==247||dtgyid==248||dtgyid==249){return true}else{return false}
+}
+}

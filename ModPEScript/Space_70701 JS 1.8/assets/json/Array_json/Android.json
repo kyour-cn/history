@@ -1,0 +1,2 @@
+{base64:function(b){return android.graphics.BitmapFactory.decodeByteArray(android.util.Base64.decode(b, 0), 0, android.util.Base64.decode(b, 0).length)},};
+END

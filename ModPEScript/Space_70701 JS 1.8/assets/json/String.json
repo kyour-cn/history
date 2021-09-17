@@ -1,0 +1,37 @@
+{
+color:{//我的世界
+0:'WHITE'//
+,1:'BLACK'//黑
+,2:'DARK_BLUE'//暗蓝
+,3:'DARK_GREEN'//暗绿
+,4:'DARK_AQUA'//
+,5:'DARK_RED'//暗红
+,6:'DARK_PURPLE'//暗紫
+,7:'GOLD'//金
+,8:'GRAY'//灰
+,9:'DARK_GRAY'//暗灰
+,10:'BLUE'//蓝
+,11:'GREEN'//
+,12:'AQUA'//
+,13:'RED'//红
+,14:'LIGHT_PURPLE'//淡黄
+,15:'YELLOW'//黄
+}
+,color2:{//安卓
+0:'BLACK'//(黑色)
+,1:'BLUE'//(蓝色)
+,2:'CYAN'//(青色)
+,3:'GRAY'//(灰色)
+,4:'GREEN'//(绿色)
+,5:'RED'//(红色)
+,6:'WHITE'//(白色)
+,7:'YELLOW'//(黄色)
+}
+,s: function(s){
+return Math.floor(Math.random()*s)
+}
+,nn:"感谢您对Space_70701的支持\n作者:百度贴吧-光夜工作室-Space工作组-[小小草_小小爱]个人制作\n欢迎加入《Space工作组》\n贴吧群:177461087\nQQ群:155306117\n●作者联系方式\n1.腾讯QQ 2653907035\n2.百度贴吧 小小草_小小爱\n3.电子邮箱 aa1@90.cm"
+
+}
+END
+这里有颜色表及字符串

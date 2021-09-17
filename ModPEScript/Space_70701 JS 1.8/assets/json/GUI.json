@@ -1,0 +1,150 @@
+{hsbtn:function(){ctx.runOnUiThread(new java.lang.Runnable({run: function(){try{var layout=new android.widget.          LinearLayout(ctx);var button=new android.widget.Button(ctx);button.setText("");button.setOnClickListener(new android.view.View.OnClickListener(){onClick: function(v){$_G.hs_cd()}});button.setBackgroundDrawable(new android.graphics.drawable.ColorDrawable(android.graphics.Color.argb(0,0,0,0)));layout.addView(button);butto2=new android.widget.PopupWindow(layout, dip2px(ctx,85),dip2px(ctx,45));butto2.setContentView(layout);butto2.setWidth(btnsize);butto2.setHeight(btnsize);butto2.setBackgroundDrawable(new android.graphics.drawable.BitmapDrawable(android.graphics.BitmapFactory.decodeFile(ping+'/res/hs_btn')));butto2.showAtLocation(ctx.getWindow().getDecorView(),android.view.Gravity.LEFT | android.view.Gravity.BOTTOM,0,0)}catch(e){print('红石菜单按钮显示失败'+e)}}}))}
+,hs_cd: function(){
+ctx.runOnUiThread(new java.lang.Runnable({run:function(){var dialog=new android.app.AlertDialog.Builder(ctx);dialog.setTitle("红石物品添加");dialog.setPositiveButton("取消",new android.content.DialogInterface.OnClickListener(){onClick: function(dia,w){}});dialog.setItems(new java.lang.String("红石线,红石灯,压力板,压力板(半格),中继器(延时),中继器(非门),粘性活塞,活塞,箭发射器,TNT发射器,拉杆,按钮,红石 _ 生成水,红石 _ 生成火").split(","),new android.content.DialogInterface.OnClickListener(){onClick: function(dia,w){switch(w){case 0: addItemInventory (178,10) ;break;case 1: addItemInventory (123,1) ;break;case 2: addItemInventory (70,1) ;break;case 3: addItemInventory (44,1,7) ;break;case 4: addItemInventory (114,1) ;break;case 5: addItemInventory (108,1) ;break;case 6: addItemInventory (156,1) ;break;case 7: addItemInventory (128,1) ;break;case 8: addItemInventory (61,1) ;break;case 9: addItemInventory (86,1) ;break;case 10: addItemInventory (155,1) ;break;case 11: addItemInventory (98,1) ;break;case 12: addItemInventory (179,1) ;break;case 13: addItemInventory (75,1) ;break}}});
+dialog.setPositiveButton("取消",new android.content.DialogInterface.OnClickListener(){
+onClick: function(dia,w){
+}});
+dialog.setNegativeButton("隐藏按钮",new android.content.DialogInterface.OnClickListener(){
+onClick: function(dia,w){
+butto2.dismiss();
+print('重新进入游戏显示')
+}});
+dialog.show()}}))}
+,setyy:function(){
+ctx.runOnUiThread(new java.lang.Runnable({run:function(){try{
+var dialog=new android.app.AlertDialog.Builder(ctx);dialog.setPositiveButton("取消/Cancel",new android.content.DialogInterface.OnClickListener(){onClick: function(dia,w){}});dialog.setItems(new java.lang.String("中文(Chinese),English(英文)").split(","),new android.content.DialogInterface.OnClickListener(){onClick: function(dia,w){try{
+switch(w){
+case 0:fx_yy=1;saveData('fx_yy',1);break;
+case 1:fx_yy=2;saveData('fx_yy',2);break}
+yyxz()}catch(z){print(z)}}});
+dialog.show();}catch(err){print(r[4]+err)}}}))}
+,$new:function(){
+ctx.runOnUiThread(new java.lang.Runnable({run:function(){try{
+var dialog=new android.app.AlertDialog.Builder(ctx);dialog.setTitle("欢迎使用");
+dialog.setMessage("检测您第一次使用此js,是否设置语言?\nDetection is the first time you use the J Script, whether to set the language?");dialog.setPositiveButton("设置语言/Yes",new android.content.DialogInterface.OnClickListener(){
+onClick: function(dia,w){$_G.setyy()}});dialog.setNegativeButton("不需要/No't",new android.content.DialogInterface.OnClickListener(){onClick: function(dia,w){}});dialog.show()}catch(err){print(r[4]+err)}}}))}
+, fxzdy:function(a,b,c,d,e,f){
+ctx.runOnUiThread(new java.lang.Runnable({ run: function(){try{
+var dialog=new android.app.AlertDialog.Builder(ctx);
+dialog.setTitle(a);
+dialog.setMessage(b);
+dialog.setPositiveButton(c,new android.content.DialogInterface.OnClickListener(){
+onClick: function(dia,w){
+eval(d)}})
+dialog.setNegativeButton(e,new android.content.DialogInterface.OnClickListener(){
+onClick: function(dia,w){
+eval(f)}});
+dialog.show()
+}catch(k){print('错误:'+k)}
+}}))}
+,printdia:function(a){var dialog=new android.app.AlertDialog.Builder(ctx);dialog.setIcon(android.R.drawable.stat_notify_error);dialog.setTitle("提示");dialog.setMessage(a);dialog.setPositiveButton("OK",new android.content.DialogInterface.OnClickListener(){onClick:function(dia,w){}});dialog.show()}
+,printfile:function(f,data,e,name){
+var kio=[data];
+if(data!=true&&data.indexOf(' ')!=-1){
+var yl=data.split(' ');
+for(var yi=0;yi<yl.length;yi++){
+kio[yi]=yl[yi]
+}}
+var file=new java.io.File(f);
+if(file.exists()&&file.isDirectory()){
+try{
+var files=file.listFiles();
+var tofiles='';
+for(var i=0;i<files.length;i++){
+var rr=String(files[i]).split('/');
+var rt=rr[rr.length-1];
+tofiles+=rt;
+if(i<files.length-1){tofiles+=','}
+};var fu=f;
+if(name!=null){fu=name}//var dd= tofiles.split(",");
+ctx.runOnUiThread(new java.lang.Runnable({ 
+run: function(){
+var dialog=new android.app.AlertDialog.Builder(ctx);
+dialog.setTitle(fu);
+dialog.setIcon(android.R.drawable.stat_notify_sdcard);
+dialog.setPositiveButton("主目录",new android.content.DialogInterface.OnClickListener(){
+onClick: function(dia,w){
+$_G.printfile(getSd,data,e,name)
+}});
+dialog.setNegativeButton("取消",new android.content.DialogInterface.OnClickListener(){onClick: function(dia,w){}});
+dialog.setItems(tofiles.split(','),new android.content.DialogInterface.OnClickListener(){onClick: function(dia,w){try{
+var data2=new java.io.File(String(files[w]));
+var h=String(files[w]);
+if(data2.exists()){
+if(data2.isFile()){
+var jo=h.split('.');
+var ygy=jo[jo.length-1].toLocaleLowerCase();
+var vvb=false;
+for(var ll=0;ll<kio.length;ll++){
+if(ygy==kio[ll]||kio[ll]==true){vvb=true}};
+if(data==true||vvb){try{
+eval(e);
+}catch(z){err(z)}
+}else{
+$_G.printfile(f,data,e);err('不好意思,您选择的文件后缀不是('+data+'),请重新选择')}
+}else if(data2.isDirectory()){
+if(data2.listFiles().length>0){
+$_G.printfile(h,data,e,name)}else{$_G.printfile(f,data,e,name);err('您选择的文件夹内容为空,请重新选择')}
+}}else{print('未知错误！')}
+}catch(z){print(z)}
+}});dialog.show();
+}}))
+}catch(z){print(z)}
+}else{print('此路径不存在')}
+}
+,evalfile:function(path){
+ctx.runOnUiThread(new java.lang.Runnable({ 
+run: function(){
+var dialog=new android.app.AlertDialog.Builder(ctx);
+dialog.setTitle("将此文件打开为?");
+dialog.setPositiveButton("取消",new android.content.DialogInterface.OnClickListener(){
+onClick: function(dia,w){
+}});
+dialog.setItems(new java.lang.String("TXT文本,HTML,MP3等音乐,PNG等图片,mp4等视频").split(","),new android.content.DialogInterface.OnClickListener(){onClick: function(dia,w){
+switch(w){
+case 0:show(readtext(path));break;
+case 1:show(newHTML(readtext(path)));break;
+default:err('个人感觉这个功能没什么用,如果觉得有必要完善或者删除,请联系作者或者回复发布贴')
+}
+}});
+dialog.show()
+}}))
+}
+//---------View File GUI-------
+,TxtView:function(path){
+var text=readtext2(path);
+$_G.ViewCD(text,path);
+}
+,HtmlView:function(path){
+var text=readtext2(path);
+var html=new android.text.Html.fromHtml(text,path);
+err(text)
+//$_G.ViewCD(text);
+}
+,ViewCD:function(str,path){
+var layout=new android.widget.LinearLayout(ctx);
+try{
+var menu=new android.widget.PopupWindow(layout, dip2px(ctx,75), dip2px(ctx,30));
+menu.setFocusable(true);
+var layout=new android.widget.LinearLayout(ctx);
+layout.setOrientation(1);
+var n= new android.widget.TextView(ctx);
+var text= new android.widget.TextView(ctx);
+n.setText(String(path));
+n.setTextSize(20);
+text.setText(String(str));
+text.setTextSize(15);
+layout.addView(n);
+layout.addView(text);
+var mlayout=makeMenu(ctx,layout);
+menu.setContentView(mlayout);
+menu.setWidth(anx);
+menu.setHeight(any);
+menu.setBackgroundDrawable(new android.graphics.drawable.ColorDrawable(android.graphics.Color.argb(127,0,0,0)));
+menu.showAtLocation(ctx.getWindow().getDecorView(),android.view.Gravity.RIGHT | android.view.Gravity.TOP,0,0);
+}catch(err){print(err)}
+}
+}
+END
+function yyxz(){
+if(fx_yy==1){vv=fx_xzvv;r=fx_xzr}else if(fx_yy==2){vv=fx_xzvv2;r=fx_xzr2}}

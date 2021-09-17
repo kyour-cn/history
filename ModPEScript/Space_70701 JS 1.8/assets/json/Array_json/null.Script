@@ -1,0 +1,15 @@
+{
+name:"空"//插件名
+,help:"您当前存档里没有插件或者您没有进入存档"//介绍
+,NEW: function(){}
+,mod: function(){}
+,mod2:function(){}
+,des:function(){}
+,death: function(a,b){}
+,use: function(x,y,z,a,b,c,d){}
+,att: function(a,b){}
+,cmd: function(cmd){}
+}
+END
+这个文件为空程序文件
+在没有进入存档和存档里没有插件时替换

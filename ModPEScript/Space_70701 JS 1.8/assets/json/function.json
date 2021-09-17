@@ -1,0 +1,218 @@
+{Time:function(n){var time= String(new java.util.Date());var p=time.split(' ');var s=p[3].split(':');if(n==1){return time[3]};if(n==2){return time[5]};if(n==3){return s[0]};if(n==4){return s[1]};if(n==5){return s[2]}}
+,HSV: function(h,s,v){
+if(h>80&&h<=160){if(s>0.1&&0.2<v&&v<=0.55){return 13}else{return 5}}
+if(s<=0.1&&v>0.85){return 0}
+if(s<=0.1&&v>0.65&&v<=0.85){return 8;}
+if(v<=0.3){return 15;}
+if(s<=0.1&&0.3<v&&v<=0.65){return 7;}
+if(h>20&&h<=50){
+if(s>0.1&&0.3<v&&v<=0.55){return 12}else{return 1}}
+if(h>280&&h<=300){return 2;}
+if(h>200&&h<=220){return 3;}
+if(h>50&&h<=80){if(s>0.1&&0.3<v&&v<=0.5){return 12}else{return 4}}
+if(h>300&&h<=340){return 6;}
+if(h>160&&h<=190){return 9;}
+if(h>260&&h<=280){return 10;}
+if(h>190&&h<=260){return 11;}
+if((h>340&&h<=360)||(h>=0&&h<=20))
+{if(0.1<=s&&s<=0.5&&v>=0.75){return 6;return 14;}else{return 15;}}
+}
+,gethsv:function(ys){var kk=android.graphics.Color.red(ys)/255,g=android.graphics.Color.green(ys)/255,b=android.graphics.Color.blue(ys)/255;var h,s,v;var min,max,delta;min=Math.min(Math.min(kk,g),b);max=Math.max(Math.max(kk,g),b);v=max;delta=max-min;if(max!=0)
+s=delta/max;else
+{s=0;h=-1;return[h,s,v];}
+if(max==min)
+h=0;
+if(max==kk&&g>=b)
+h=60*(g-b)/delta;if(max==r&&g<b)
+h=60*(g-b)/delta+360;if(max==g)
+h=60*(b-kk)/delta+120;if(max==b)
+h=60*(r-g)/delta+240;return[h,s,v];
+}
+,dtgy:function(){if(dtgy==1){
+ga=getPlayerX();gb=getPlayerY()-1;gc=getPlayerZ();gt=true};if(gt){time++;if(time==5);{time=0;if(getTile(ga,gb,gc)==0){gT=getTile(ga,gb-1,gc);if($_N.getDtgy(gT)){setTile(gx,gy,gz,0);setTile(ga,gb,gc,50);gx=ga,gy=gb,gz=gc}else{if(Math.abs(ga-gx)>=4||Math.abs(gc-gz)>=4||Math.abs(gb-gy)>=4){if(getTile(gx,gy,gz)==50){setTile(gx,gy,gz,0)}}}};if(getTile(ga,gb-1,gc)==0){gT=getTile(ga,gb-2,gc);if($_N.getDtgy(gT)){setTile(gx,gy,gz,0);setTile(ga,gb-1,gc,50);gx=ga,gy=gb-1,gz=gc}else{if(Math.abs(ga-gx)>=4||Math.abs(gc-gz)>=4||Math.abs(gb-gy)>=4){if(getTile(gx,gy,gz)==50){setTile(gx,gy,gz,0)}}}};if(getTile(ga,gb-2,gc)==0){gT=getTile(ga,gb-3,gc);if($_N.getDtgy(gT)){setTile(gx,gy,gz,0);setTile(ga,gb-2,gc,50);gx=ga,gy=gb-2,gz=gc}else{if(Math.abs(ga-gx)>=4||Math.abs(gc-gz)>=4||Math.abs(gb-gy)>=4){if(getTile(gx,gy,gz)==50){setTile(gx,gy,gz,0)}}}};if(getTile(ga,gb,gc)!=0||getTile(ga,gb-1,gc)!=0||getTile(ga,gb-2,gc)!=0){if(Math.abs(ga-gx)>=4||Math.abs(gc-gz)>=4||Math.abs(gb-gy)>=4){if(getTile(gx,gy,gz)==50){setTile(gx,gy,gz,0)}}}}};if(dtgy==1){gk=true}if(!gk){if(getTile(gx,gy,gz)!=50);{setTile(gx,gy,gz,0);gx=0,gy=0,gz=0;gk=false}}}
+,setxz:function(id,data){
+var slo;var uu=true;
+var x=aki[0],y=aki[1],z=aki[2];
+if(Level.getTile(x,y,z)==54){
+if(Level.getChestSlot(x,y,z,0)==0||Level.getChestSlot(x,y,z,0)==id&&Level.getChestSlotData(x,y,z,0)==data ){
+slo=Level.getChestSlotCount(x,y,z,0);
+Level.setChestSlot(x,y,z,0,id,data,slo+1)}
+else if(Level.getChestSlot(x,y,z,1)==0||Level.getChestSlot(x,y,z,1)==id&&Level.getChestSlotData(x,y,z,1)==data){
+slo=Level.getChestSlotCount(x,y,z,1);
+Level.setChestSlot(x,y,z,1,id,data,slo+1)}
+else if(Level.getChestSlot(x,y,z,2)==0||Level.getChestSlot(x,y,z,2)==id&&Level.getChestSlotData(x,y,z,2)==data){
+slo=Level.getChestSlotCount(x,y,z,2);
+Level.setChestSlot(x,y,z,2,id,data,slo+1)}
+else if(Level.getChestSlot(x,y,z,3)==0||Level.getChestSlot(x,y,z,3)==id &&Level.getChestSlotData(x,y,z,3)==data ){
+slo=Level.getChestSlotCount(x,y,z,3);
+Level.setChestSlot(x,y,z,3,id,data,slo+1)}
+else if(Level.getChestSlot(x,y,z,4)==0||Level.getChestSlot(x,y,z,4)==id &&Level.getChestSlotData(x,y,z,5)==data ){
+slo=Level.getChestSlotCount(x,y,z,4);
+Level.setChestSlot(x,y,z,4,id,data,slo+1)}
+else if(Level.getChestSlot(x,y,z,5)==0||Level.getChestSlot(x,y,z,5)==id &&Level.getChestSlotData(x,y,z,6)==data ){
+slo=Level.getChestSlotCount(x,y,z,5);
+Level.setChestSlot(x,y,z,5,id,data,slo+1)}
+else if(Level.getChestSlot(x,y,z,6)==0||Level.getChestSlot(x,y,z,6)==id &&Level.getChestSlotData(x,y,z,6)==data ){
+slo=Level.getChestSlotCount(x,y,z,6);
+Level.setChestSlot(x,y,z,6,id,data,slo+1)}
+else if(Level.getChestSlot(x,y,z,7)==0||Level.getChestSlot(x,y,z,7)==id &&Level.getChestSlotData(x,y,z,7)==data ){
+slo=Level.getChestSlotCount(x,y,z,7);
+Level.setChestSlot(x,y,z,7,id,data,slo+1)}
+else if(Level.getChestSlot(x,y,z,8)==0||Level.getChestSlot(x,y,z,8)==id &&Level.getChestSlotData(x,y,z,8)==data ){
+slo=Level.getChestSlotCount(x,y,z,8);
+Level.setChestSlot(x,y,z,8,id,data,slo+1)}
+else if(Level.getChestSlot(x,y,z,9)==0||Level.getChestSlot(x,y,z,9)==id &&Level.getChestSlotData(x,y,z,9)==data ){
+slo=Level.getChestSlotCount(x,y,z,9);
+Level.setChestSlot(x,y,z,9,id,data,slo+1)}
+else if(Level.getChestSlot(x,y,z,10)==0||Level.getChestSlot(x,y,z,10)==id &&Level.getChestSlotData(x,y,z,10)==data ){
+slo=Level.getChestSlotCount(x,y,z,10);
+Level.setChestSlot(x,y,z,10,id,data,slo+1)}
+else if(Level.getChestSlot(x,y,z,11)==0||Level.getChestSlot(x,y,z,11)==id &&Level.getChestSlotData(x,y,z,11)==data ){
+slo=Level.getChestSlotCount(x,y,z,11);
+Level.setChestSlot(x,y,z,11,id,data,slo+1)}
+else if(Level.getChestSlot(x,y,z,12)==0||Level.getChestSlot(x,y,z,12)==id &&Level.getChestSlotData(x,y,z,12)==data ){
+slo=Level.getChestSlotCount(x,y,z,12);
+Level.setChestSlot(x,y,z,12,id,data,slo+1)}
+else if(Level.getChestSlot(x,y,z,13)=0||Level.getChestSlot(x,y,z,13)==id &&Level.getChestSlotData(x,y,z,13)==data ){
+slo=Level.getChestSlotCount(x,y,z,13);
+Level.setChestSlot(x,y,z,13,id,data,slo+1)}
+else if(Level.getChestSlot(x,y,z,14)==0||Level.getChestSlot(x,y,z,14)==id &&Level.getChestSlotData(x,y,z,14)==data ){
+slo=Level.getChestSlotCount(x,y,z,14);
+Level.setChestSlot(x,y,z,14,id,data,slo+1)}
+else if(Level.getChestSlot(x,y,z,15)==0||Level.getChestSlot(x,y,z,15)==id &&Level.getChestSlotData(x,y,z,15)==data ){
+slo=Level.getChestSlotCount(x,y,z,15);
+Level.setChestSlot(x,y,z,15,id,data,slo+1)}
+else if(Level.getChestSlot(x,y,z,16)==0||Level.getChestSlot(x,y,z,16)==id &&Level.getChestSlotData(x,y,z,16)==data ){
+slo=Level.getChestSlotCount(x,y,z,16);
+Level.setChestSlot(x,y,z,16,id,data,slo+1)}
+else if(Level.getChestSlot(x,y,z,17)==0||Level.getChestSlot(x,y,z,17)==id &&Level.getChestSlotData(x,y,z,17)==data ){
+slo=Level.getChestSlotCount(x,y,z,17);
+Level.setChestSlot(x,y,z,17,id,data,slo+1)}
+else if(Level.getChestSlot(x,y,z,18)==0||Level.getChestSlot(x,y,z,18)==id &&Level.getChestSlotData(x,y,z,18)==data ){
+slo=Level.getChestSlotCount(x,y,z,18);
+Level.setChestSlot(x,y,z,18,id,data,slo+1)}
+else if(Level.getChestSlot(x,y,z,19)==0||Level.getChestSlot(x,y,z,19)==id &&Level.getChestSlotCount(x,y,z,19)<64 ){
+slo=Level.getChestSlotCount(x,y,z,19);
+Level.setChestSlot(x,y,z,19,id,data,slo+1)}
+else if(Level.getChestSlot(x,y,z,20)==0||Level.getChestSlot(x,y,z,20)==id &&Level.getChestSlotCount(x,y,z,20)<64 ){
+slo=Level.getChestSlotCount(x,y,z,20);
+Level.setChestSlot(x,y,z,20,id,data,slo+1)}
+else if(Level.getChestSlot(x,y,z,21)==0||Level.getChestSlot(x,y,z,21)==id &&Level.getChestSlotCount(x,y,z,21)<64 ){
+slo=Level.getChestSlotCount(x,y,z,21);
+Level.setChestSlot(x,y,z,21,id,data,slo+1)}
+else if(Level.getChestSlot(x,y,z,22)==0||Level.getChestSlot(x,y,z,22)==id &&Level.getChestSlotCount(x,y,z,22)<64 ){
+slo=Level.getChestSlotCount(x,y,z,22);
+Level.setChestSlot(x,y,z,22,id,data,slo+1)}
+else if(Level.getChestSlot(x,y,z,23)==0||Level.getChestSlot(x,y,z,23)==id &&Level.getChestSlotCount(x,y,z,23)<64 ){
+slo=Level.getChestSlotCount(x,y,z,23);
+Level.setChestSlot(x,y,z,23,id,data,slo+1)} else if(Level.getChestSlot(x,y,z,24)==0||Level.getChestSlot(x,y,z,24)==id &&Level.getChestSlotCount(x,y,z,24)<64 ){
+slo=Level.getChestSlotCount(x,y,z,24);
+Level.setChestSlot(x,y,z,24,id,data,slo+1)}
+else if(Level.getChestSlot(x,y,z,25)==0||Level.getChestSlot(x,y,z,25)==id &&Level.getChestSlotCount(x,y,z,25)<64 ){
+slo=Level.getChestSlotCount(x,y,z,25);
+Level.setChestSlot(x,y,z,25,id,data,slo+1)}
+else if(Level.getChestSlot(x,y,z,26)==0||Level.getChestSlot(x,y,z,26)==id &&Level.getChestSlotCount(x,y,z,26)<64 ){
+slo=Level.getChestSlotCount(x,y,z,26);
+Level.setChestSlot(x,y,z,26,id,data,slo+1)}
+else if(Level.getChestSlot(x,y,z,27)==0||Level.getChestSlot(x,y,z,27)==id &&Level.getChestSlotCount(x,y,z,27)<64 ){
+slo=Level.getChestSlotCount(x,y,z,27);
+Level.setChestSlot(x,y,z,27,id,data,slo+1)}
+else {print(r[48])}
+}else{xzjs=0}
+}
+,cmd:function(cm){
+var cmd = cm.split(" ");
+if(cmd[0]=="setbtn"||cmd[0]=="按钮"){
+setbut()}
+if(cmd[0]=="开启方块消失术"||cmd[0]=="fkxsson"){
+aaa=1;clientMessage(mcolor()+" 用蒲公英（黄花）点击任意方块将破坏");
+addItemInventory(37,1)
+}if(cmd[0]=="关闭方块消失术" ||cmd[0]=="fkxssoff"){
+clientMessage( mcolor()+ "已关闭方块消失术")
+aaa=0
+}if(cmd[0]=="开启永夜" ||cmd[0]=="yyon" ){
+Level.setNightMode(1);
+clientMessage( mcolor()+ "永夜已开启")
+}
+if(cmd[0]=="关闭永夜" ||cmd[0]=="yyoff" ){
+Level.setNightMode()
+clientMessage( mcolor()+ "永夜已关闭")
+}if(cmd[0]=="满血" ||cmd[0]=="mx" ){
+Player.setHealth(20)
+wxx=0;clientMessage(mcolor()+"哇插！居然满血了")}
+if(cmd[0]=="无限血" ||cmd[0]=="wxx" ){
+wxx=1;clientMessage(mcolor()+"无限血已开,输入满血关闭无限血")
+}if(cmd[0]=="tp"||cmd[0]=="传送")
+{var player = getPlayerEnt();
+if(cmd.length==4){
+setPosition(player, parseInt(cmd[1]), parseInt(cmd[2]), parseInt(cmd[3]));
+clientMessage("传送成功");
+}
+}if(cmd[0]=="全开" ||cmd[0]=="on" )
+{clientMessage("功能未来放")
+print("你他妈在逗我o(╥﹏╥)o")
+}if(cmd[0]=="创造" ||cmd[0]=="cz" )
+{clientMessage("你获得了创造")
+Level.setGameMode(1);
+}if(cmd[0]=="生存" ||cmd[0]=="sc" )
+{clientMessage("你获得了生存")
+Level.setGameMode(0);
+}if(cmd[0]=="开启快速挖掘" ||cmd[0]=="kswjon" )
+{zs=1;clientMessage("已获得快速挖掘")
+}if(cmd[0]=="关闭快速挖掘" ||cmd[0]=="kswjoff" )
+{zs=0;clientMessage("已关闭快速挖掘")
+}if(zs==1){
+for(var i=1;i<256;i++){
+Block.setDestroyTime(i,0.2);}
+}else if(zs==0){for(var i=1;i<256;i++){
+Block.setDestroyTime(i,1);}
+preventDefault();
+}if(cmd[0]=="开启连射" ||cmd[0]=="lson" ){cc=1;clientMessage("已开启连射")
+}if(cmd[0]=="关闭连射" ||cmd[0]=="lsoff" ){
+cc=0;clientMessage("连射已关闭。输入提示查看所有功能")
+}if(cmd[0]=="白天" ||cmd[0]=="bt" )
+{clientMessage("呀哈！天亮了")
+Level.setTime(0);
+}if(cmd[0]=="夜晚" ||cmd[0]=="yw" )
+{clientMessage("天黑了 可以与怪兽们约会了^V^");Level.setTime(9600)}if(cmd[0]=="我怕黑" ||cmd[0]=="wph" )
+{x=Player.getX();y=Player.getY();z=Player.getZ-1();
+setTile(x,y,z,89)}if(cmd[0]=="我在哪里"||cmd[0]=="GPS")
+{clientMessage("X: " + Player.getX());
+clientMessage("Y: " + (Player.getY() - 1));
+clientMessage("Z: " + Player.getZ());
+}if(cmd[0]== "奖励箱"||cmd[0]== "jlx"){
+clientMessage("系统运行正常")
+addItemInventory(4,64);addItemInventory(4,64);
+addItemInventory(17,64);addItemInventory(26,1);
+addItemInventory(50,64);addItemInventory(257,1);
+addItemInventory(261,1);addItemInventory(262,64);
+addItemInventory(262,64);addItemInventory(307,1);
+addItemInventory(352,64);
+}if(cmd[0]=="plon"||cmd[0]=="铺路开")
+{clientMessage(mcolor()+"脚下生成手持物品");pl=1
+}if(cmd[0]=="ploff"||cmd[0]==" 铺路关")
+{pl=0;clientMessage("铺路关闭了")
+}if(cmd[0]=="jpon"&&cmd[0]=="疾跑开"){bbn=1;clientMessage("打开了疾跑")
+}if(cmd[0]=="jponff"&&cmd[0]=="疾跑关"){bbn=0;clientMessage("关闭了疾跑")
+}
+}
+,ydfile:function(file,od,n){
+try{
+var oldFile=new java.io.File(file);
+var fy=new java.io.File(od);
+oldFile.renameTo(new java.io.File(fy,n));
+print('ok')
+}catch(z){err('错误:'+z)}
+}
+,ydfiles:function(dir,od,n){
+print('未完成');
+try{
+var oldFile=new java.io.File(dir);
+var fy=new java.io.File(od);
+oldFile.renameTo(new java.io.File(fy,n));
+print('ok')
+}catch(z){err('错误:'+z)}
+}
+}
+END
+这是传送物品到箱子的函数,用for出错,所以就变那么长了
